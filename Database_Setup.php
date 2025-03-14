@@ -35,15 +35,15 @@ $sql = "CREATE TABLE IF NOT EXISTS admin (
 if (mysqli_query($conn, $sql)) {
     echo "Admin table created successfully!<br>";
     // Check if an admin already exists
-    $check_query = "SELECT * FROM admin WHERE email = 'osama12@gmail.com'";
+    $check_query = "SELECT * FROM admin WHERE email = 'abcd12@gmail.com'";
     $check_result = mysqli_query($conn, $check_query);
 
     if (mysqli_num_rows($check_result) == 0) {
         // Hash the default password
-        $default_password = password_hash("osama12345", PASSWORD_DEFAULT);
+        $default_password = password_hash("abcd12345", PASSWORD_DEFAULT);
         
         // Insert initial admin
-        $insert_admin = "INSERT INTO admin (email, password) VALUES ('osama12@gmail.com', '$default_password')";
+        $insert_admin = "INSERT INTO admin (email, password) VALUES ('abcd12@gmail.com', '$default_password')";
         
         if (mysqli_query($conn, $insert_admin)) {
             echo "Initial admin account created!<br>";
